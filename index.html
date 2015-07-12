@@ -9,7 +9,7 @@ function callNewPage(PageName)
 }
 function toggle()
 {
-	document.getElementById("Read").readOnly = false;
+	document.getElementById("TxtN1").readOnly = false;
 }
 function logout()
 {
@@ -20,7 +20,7 @@ navigator.app.exitApp();
 </head>
 <body>
 
-<input type="number" readonly = "true" id = 'Read' >Enter a number</input>
+<input type = "button" class = "BtnGridNumber" id = "BtnN1"><input type = "Number" id = 'TxtN1' value = "?" readonly = "true" /></input>
 <input type = "button" onclick = "toggle()" value ='SwitchOffReadOnly'/>
 <div class = 'Container'>
 

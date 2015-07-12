@@ -1,29 +1,52 @@
 <html>
 <head>
 <script src="Clicks.js"></script>
+<script src="phonegap.js"></script>
 <script>
-function generateNumbersEasy()
+function callNewPage(PageName)
 {
-	
+	window.location = PageName + '.html';
 }
-function ValidateOutput()
+function toggle()
 {
+	document.getElementById("Read").readOnly = false;
 }
-function timer()
+function logout()
 {
-	
-}
-function NewPage()
-{
-	window.location = "Page1.html";
+navigator.app.exitApp();
 }
 </script>
 
 </head>
 <body>
-<input type="number">Enter a number</input>
-<input type="text">Enter a text</input>
-<input type="button" text = "Submit" onclick ="NewPage()"></input>
 
+<input type="number" readonly = "true" id = 'Read' >Enter a number</input>
+<input type = "button" onclick = "toggle()" value ='SwitchOffReadOnly'/>
+<div class = 'Container'>
+
+	<!-- Header to be used across all screens-->
+	<div class = 'Header'>
+	<!--Settings Button Image -->
+	<!--Exit Button Image -->
+	<input type = "button" onclick = "logout()" value ='Logout'/>
+	</div>
+
+	<!--To select difficulty level and call other pages-->
+	<div class = 'Buttons'>
+	<input type="button" value = "3X3" onclick ="callNewPage('3x3')"></input>
+	<input type="button" value = "4X4" onclick ="callNewPage('4x4')"></input>
+	<input type="button" value = "5X5" onclick ="callNewPage('5x5')"></input>
+	</div>
+
+	<!--Footer to be used for 1st page only-->
+
+	<div>
+	<!--Help Button Image-->
+	<!--Medals Button Image-->
+	<input type="button" src = 'Medals.png' onclick = "callNewPage('Medals')">
+	<a onclick = "callNewPage('Medals')"><IMG src = 'Medals.png' /></a>
+	</div>
+
+</div>
 </body>
 </html>
